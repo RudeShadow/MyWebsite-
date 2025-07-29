@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FurFree | Premium Pet Hair Removal Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #4f46e5;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .cart-count {
+            top: -8px;
+            right: -8px;
+        }
+        .hero-image {
+            background-image: url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1498&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-paw text-indigo-600 text-2xl"></i>
+                <span class="text-xl font-bold text-gray-800">FurFree</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#products" class="nav-link text-gray-700 hover:text-indigo-600 font-medium">Products</a>
+                <a href="#how-it-works" class="nav-link text-gray-700 hover:text-indigo-600 font-medium">How It Works</a>
+                <a href="#testimonials" class="nav-link text-gray-700 hover:text-indigo-600 font-medium">Testimonials</a>
+                <a href="#faq" class="nav-link text-gray-700 hover:text-indigo-600 font-medium">FAQ</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <button id="cart-btn" class="text-gray-700 hover:text-indigo-600">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                    </button>
+                    <span id="cart-count" class="cart-count absolute bg-indigo-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">0</span>
+                </div>
+                <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t py-2 px-4">
+            <a href="#products" class="block py-2 text-gray-700 hover:text-indigo-600">Products</a>
+            <a href="#how-it-works" class="block py-2 text-gray-700 hover:text-indigo-600">How It Works</a>
+            <a href="#testimonials" class="block py-2 text-gray-700 hover:text-indigo-600">Testimonials</a>
+            <a href="#faq" class="block py-2 text-gray-700 hover:text-indigo-600">FAQ</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-image relative">
+        <div class="bg-black bg-opacity-40">
+            <div class="container mx-auto px-4 py-24 md:py-32 text-white">
+                <div class="max-w-2xl animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Say Goodbye to Pet Hair Everywhere</h1>
+                    <p class="text-xl mb-8">Premium pet hair removal tools designed for pet lovers who value cleanliness and style.</p>
+                    <a href="#products" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg inline-block transition duration-300">
+                        Shop Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="bg-gray-50 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle text-green-500 text-2xl mr-2"></i>
+                    <span class="text-gray-700 font-medium">Veterinarian Approved</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-leaf text-green-400 text-2xl mr-2"></i>
+                    <span class="text-gray-700 font-medium">Eco-Friendly Materials</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt text-blue-400 text-2xl mr-2"></i>
+                    <span class="text-gray-700 font-medium">1-Year Warranty</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-truck text-orange-400 text-2xl mr-2"></i>
+                    <span class="text-gray-700 font-medium">Free Shipping</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="products" class="py-16 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Our Premium Collection</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Engineered to remove pet hair from any surface without damaging your furniture or clothes.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="FurMaster Pro" class="w-full h-64 object-cover">
+                        <span class="absolute top-2 right-2 bg-indigo-600 text-white text-xs font-bold px-2 py-1 rounded">BESTSELLER</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">FurMaster Pro</h3>
+                        <p class="text-gray-600 mb-4">Professional-grade pet hair remover for all surfaces with ergonomic design.</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(428 reviews)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-800">$49.99</span>
+                            <button class="add-to-cart bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg transition duration-300" data-id="1" data-name="FurMaster Pro" data-price="49.99">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80" alt="Magic Fur Wand" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Magic Fur Wand</h3>
+                        <p class="text-gray-600 mb-4">Portable and effective for quick cleanups on clothes and car seats.</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(312 reviews)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-800">$29.99</span>
+                            <button class="add-to-cart bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg transition duration-300" data-id="2" data-name="Magic Fur Wand" data-price="29.99">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-xl overflow-hidden shadow-md transition duration-300">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Ultimate Fur Bundle" class="w-full h-64 object-cover">
+                        <span class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">NEW</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Ultimate Fur Bundle</h3>
+                        <p class="text-gray-600 mb-4">Complete set with tools for furniture, clothes, and car interiors.</p>
+                        <div class="flex items-center mb-4">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm ml-2">(187 reviews)</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-gray-800">$79.99</span>
+                            <span class="text-sm text-gray-500 line-through">$99.99</span>
+                            <button class="add-to-cart bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg transition duration-300" data-id="3" data-name="Ultimate Fur Bundle" data-price="79.99">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-indigo-600 text-indigo-600 hover:bg-indigo-600 hover:text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    View All Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">How FurFree Works</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Our scientifically designed tools make pet hair removal effortless and effective.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg bg-gray-50">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-hand-paper text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">1. Gentle on Surfaces</h3>
+                    <p class="text-gray-600">Our tools are designed to lift hair without damaging fabrics, upholstery, or car interiors.</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-lg bg-gray-50">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-magic text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">2. Effortless Cleaning</h3>
+                    <p class="text-gray-600">Specialized materials attract and trap pet hair with minimal effort on your part.</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-lg bg-gray-50">
+                    <div class="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-recycle text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">3. Reusable & Washable</h3>
+                    <p class="text-gray-600">Simply wash with water and reuse hundreds of times, reducing waste.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-indigo-50 rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">See It In Action</h3>
+                    <p class="text-gray-600 mb-6">Watch how our FurMaster Pro effortlessly removes pet hair from even the most stubborn fabrics in seconds.</p>
+                    <a href="#" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg inline-block transition duration-300">
+                        Watch Demo Video <i class="fas fa-play-circle ml-2"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative pb-[56.25%] bg-gray-200 rounded-lg overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-play text-indigo-600 text-4xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 gradient-bg">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">What Pet Owners Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Join thousands of happy customers who've reclaimed their homes from pet hair.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"I have three golden retrievers and this has been a game changer. My furniture looks new again and it takes me a fraction of the time to clean!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah J.</h4>
+                            <p class="text-gray-500 text-sm">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"The Magic Fur Wand lives in my car now. It's perfect for quick cleanups before meetings. No more embarrassing pet hair on my suits!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael T.</h4>
+                            <p class="text-gray-500 text-sm">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"I was skeptical but the Ultimate Bundle is worth every penny. My cat's hair used to be everywhere, now my home stays clean for days."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa M." class="w-10 h-10 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Lisa M.</h4>
+                            <p class="text-gray-500 text-sm">Verified Buyer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Frequently Asked Questions</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Everything you need to know about our pet hair removal tools.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-indigo-600 focus:outline-none">
+                        <span>How often should I clean my FurFree tool?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        We recommend cleaning your tool after every 2-3 uses for optimal performance. Simply rinse with warm water and let air dry. For deep cleaning, mild soap can be used.
+                    </div>
+                </div>
+                
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-indigo-600 focus:outline-none">
+                        <span>Will this work on all pet hair types?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        Yes! Our tools are effective on both short and long hair from dogs, cats, rabbits, and other furry pets. The special material attracts all types of pet hair regardless of length or texture.
+                    </div>
+                </div>
+                
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-indigo-600 focus:outline-none">
+                        <span>Is there a satisfaction guarantee?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        Absolutely. We offer a 60-day money-back guarantee. If you're not completely satisfied with your purchase, simply return it for a full refund, no questions asked.
+                    </div>
+                </div>
+                
+                <div class="mb-4 border-b border-gray-200 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-indigo-600 focus:outline-none">
+                        <span>How long does shipping take?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        We process orders within 24 hours. Standard shipping takes 3-5 business days in the US. Expedited shipping options are available at checkout.
+                    </div>
+                </div>
+                
+                <div class="mb-4 pb-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-indigo-600 focus:outline-none">
+                        <span>Can I use this on delicate fabrics?</span>
+                        <i class="fas fa-chevron-down text-indigo-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer mt-2 text-gray-600 hidden">
+                        Our tools are safe for most fabrics including silk, wool, and leather. However, we always recommend testing on a small, inconspicuous area first if you're concerned about delicate materials.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-indigo-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Ready to Transform Your Home?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Join over 50,000 pet owners who've discovered the joy of a hair-free home.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#products" class="bg-white text-indigo-600 hover:bg-gray-100 font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Shop Our Products
+                </a>
+                <a href="#" class="border-2 border-white hover:bg-indigo-700 font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-paw text-indigo-400 text-2xl"></i>
+                        <span class="text-xl font-bold">FurFree</span>
+                    </div>
+                    <p class="text-gray-400">Premium pet hair removal solutions for the modern pet owner.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Shop</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">All Products</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bestsellers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">New Arrivals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bundle Deals</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Gift Cards</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Product Care</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Warranty</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Stay Updated</h3>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for tips and exclusive offers.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 FurFree. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="fixed inset-y-0 right-0 w-full md:w-96 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+        <div class="h-full flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
+                <h3 class="text-xl font-bold text-gray-800">Your Cart (<span id="cart-sidebar-count">0</span>)</h3>
+                <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <div id="cart-items" class="flex-1 overflow-y-auto p-6">
+                <div class="text-center text-gray-500 py-8">
+                    <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+                    <p>Your cart is empty</p>
+                </div>
+            </div>
+            
+            <div class="p-6 border-t border-gray-200">
+                <div class="flex justify-between mb-4">
+                    <span class="font-medium text-gray-700">Subtotal</span>
+                    <span id="cart-subtotal" class="font-bold">$0.00</span>
+                </div>
+                <p class="text-sm text-gray-500 mb-6">Shipping & taxes calculated at checkout</p>
+                <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                    Checkout
+                </button>
+                <div class="mt-4 flex justify-center">
+                    <img src="https://cdn.shopify.com/shopifycloud/payment_icons/amazon.png" alt="Amazon Pay" class="h-8 mx-2">
+                    <img src="https://cdn.shopify.com/shopifycloud/payment_icons/apple_pay.png" alt="Apple Pay" class="h-8 mx-2">
+                    <img src="https://cdn.shopify.com/shopifycloud/payment_icons/visa.png" alt="Visa" class="h-8 mx-2">
+                    <img src="https://cdn.shopify.com/shopifycloud/payment_icons/mastercard.png" alt="Mastercard" class="h-8 mx-2">
+                    <img src="https://cdn.shopify.com/shopifycloud/payment_icons/paypal.png" alt="PayPal" class="h-8 mx-2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cart-overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-indigo-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-opacity duration-300 opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Shopping Cart Toggle
+        const cartBtn = document.getElementById('cart-btn');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCart = document.getElementById('close-cart');
+        const cartOverlay = document.getElementById('cart-overlay');
+        
+        cartBtn.addEventListener('click', () => {
+            cartSidebar.classList.remove('translate-x-full');
+            cartOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.add('translate-x-full');
+            cartOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+        
+        cartOverlay.addEventListener('click', () => {
+            cartSidebar.classList.add('translate-x-full');
+            cartOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        // Shopping Cart Functionality
+        let cart = [];
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartCount = document.getElementById('cart-count');
+        const cartSidebarCount = document.getElementById('cart-sidebar-count');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const id = button.getAttribute('data-id');
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                
+                // Check if item already in cart
+                const existingItem = cart.find(item => item.id === id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id,
+                        name,
+                        price,
+                        quantity: 1
+                    });
+                }
+                
+                updateCart();
+                
+                // Show cart sidebar
+                cartSidebar.classList.remove('translate-x-full');
+                cartOverlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        function updateCart() {
+            // Update cart count
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            cartSidebarCount.textContent = totalItems;
+            
+            // Update cart items display
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="text-center text-gray-500 py-8">
+                        <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+                        <p>Your cart is empty</p>
+                    </div>
+                `;
+            } else {
+                let itemsHTML = '';
+                cart.forEach(item => {
+                    itemsHTML += `
+                        <div class="flex items-center mb-6 pb-6 border-b border-gray-200">
+                            <div class="bg-gray-100 w-16 h-16 rounded-lg mr-4"></div>
+                            <div class="flex-1">
+                                <h4 class="font-medium text-gray-800">${item.name}</h4>
+                                <div class="flex justify-between items-center mt-2">
+                                    <div class="flex items-center border border-gray-300 rounded-lg">
+                                        <button class="decrease-quantity px-3 py-1 text-gray-600" data-id="${item.id}">-</button>
+                                        <span class="px-3">${item.quantity}</span>
+                                        <button class="increase-quantity px-3 py-1 text-gray-600" data-id="${item.id}">+</button>
+                                    </div>
+                                    <span class="font-medium">$${(item.price * item.quantity).toFixed(2)}</span>
+                                </div>
+                            </div>
+                            <button class="remove-item ml-4 text-gray-500 hover:text-red-500" data-id="${item.id}">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    `;
+                });
+                
+                cartItemsContainer.innerHTML = itemsHTML;
+                
+                // Add event listeners to new buttons
+                document.querySelectorAll('.decrease-quantity').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = e.target.getAttribute('data-id');
+                        const item = cart.find(item => item.id === id);
+                        
+                        if (item.quantity > 1) {
+                            item.quantity -= 1;
+                        } else {
+                            cart = cart.filter(item => item.id !== id);
+                        }
+                        
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.increase-quantity').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = e.target.getAttribute('data-id');
+                        const item = cart.find(item => item.id === id);
+                        item.quantity += 1;
+                        updateCart();
+                    });
+                });
+                
+                document.querySelectorAll('.remove-item').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        const id = e.target.closest('button').getAttribute('data-id');
+                        cart = cart.filter(item => item.id !== id);
+                        updateCart();
+                    });
+                });
+            }
+            
+            // Update subtotal
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            cartSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+        }
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (answer.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+                
+                // Close other open answers
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.add('hidden');
+                        q.querySelector('i').style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
